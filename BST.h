@@ -16,16 +16,17 @@ class BST{
                 Node(const Node &otherNode){this->data = otherNode.data; this->leftChild = otherNode.leftChild; this->rightChild = otherNode.rightChild;};
                 int getData(){return this->data;};
         };
-        Node* root, *currentNode;
+        Node* root, *currentNode, *prevNode;
 
     public:
         BST();
         BST(int value);
-        // BST* insert(int value); Incorrect
+        void insert(Node* n, int value);
         ~BST();
         void preOrderWalk();
         void postOrderWalk();
-        void inOrderWalk();
+        void printInOrderWalk(Node* node);
+        void reset();
     
 
 };

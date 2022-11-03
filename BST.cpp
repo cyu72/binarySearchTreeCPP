@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
 #include "BST.h"
 
 using namespace std;
@@ -14,11 +15,20 @@ BST::BST(int value){
     currentNode = root;
 }
 
-// BST* BST::insert(int value){
-//     Node* newNode = new Node(value);
-//     if ((root == nullptr) || (root->getData() == -999999)) root = newNode;
+/* Takes in currentNode paramater, value you want to add*/
+void BST::insert(Node* n, int value){
 
-
-//     return this;
     
-// }
+}
+
+void BST::printInOrderWalk(Node* node){
+    if (node == NULL) return;
+
+    printInOrderWalk(node->leftChild);
+    cout << node->data << " ";
+    printInOrderWalk(node->rightChild);
+}
+
+void BST::reset(){
+    currentNode = root;
+}
