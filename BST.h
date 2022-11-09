@@ -11,22 +11,22 @@ class BST{
                 int data;
                 Node* leftChild;
                 Node* rightChild;
-                Node(){int data = -999999; this->leftChild = nullptr; this->rightChild = nullptr;};
+                Node(){int data = -999; this->leftChild = nullptr; this->rightChild = nullptr;};
                 Node(int data){this->data = data; this->leftChild = nullptr; this->rightChild = nullptr;};
                 Node(const Node &otherNode){this->data = otherNode.data; this->leftChild = otherNode.leftChild; this->rightChild = otherNode.rightChild;};
                 int getData(){return this->data;};
         };
-        Node* root, *currentNode, *prevNode;
+        Node* currentNode, *root, *prevNode;;
 
     public:
         BST();
         BST(int value);
-        void insert(Node* n, int value);
-        ~BST();
+        void insert(Node* root, int value);
+        // ~BST();
         void preOrderWalk();
         void postOrderWalk();
         void printInOrderWalk(Node* node);
         void reset();
-    
+        Node* getRoot(){return this->root;};
 
 };

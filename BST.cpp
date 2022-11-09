@@ -15,12 +15,35 @@ BST::BST(int value){
     currentNode = root;
 }
 
-/* Takes in currentNode paramater, value you want to add*/
-void BST::insert(Node* n, int value){
-
+/* Takes in root and value you want to add as node*/
+void BST::insert(Node* root, int value){
+    Node* newNode = new Node(value);
+    if (!root){
+        root = newNode;
+        return;
+    }
     
+    Node* prev = nullptr;
+    Node* temp = root;
+    while(temp){
+        if (temp->data > value){
+            prev = temp;
+            temp = temp->leftChild;
+        }
+        else if (temp->data < value){
+            prev = temp;
+            temp = temp->rightChild;
+        }
+    }
+    if (value < prev->data){
+        prev->leftChild = newNode;
+    }
+    else{
+        prev->rightChild = newNode;
+    }
 }
 
+/*Takes in currentRoot at node as parameter*/
 void BST::printInOrderWalk(Node* node){
     if (node == NULL) return;
 
