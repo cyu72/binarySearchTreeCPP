@@ -3,7 +3,7 @@
 #include "BST.h"
 
 using namespace std;
-//Just need to rewrite insert at this point
+
 int main(){
     BST firstTree = BST(1);
     firstTree.insert(firstTree.getRoot(), 3);

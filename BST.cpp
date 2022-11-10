@@ -15,6 +15,18 @@ BST::BST(int value){
     currentNode = root;
 }
 
+BST::~BST(){
+    deleteBST(this->root);
+}
+
+void BST::deleteBST(Node* node){
+    if(node){
+        deleteBST(node->leftChild);
+        deleteBST(node->rightChild);
+        delete node;
+    }
+}
+
 /* Takes in root and value you want to add as node*/
 void BST::insert(Node* root, int value){
     Node* newNode = new Node(value);

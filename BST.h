@@ -17,12 +17,13 @@ class BST{
                 int getData(){return this->data;};
         };
         Node* currentNode, *root, *prevNode;;
+        void deleteBST(Node* root);
 
     public:
         BST();
         BST(int value);
         void insert(Node* root, int value);
-        // ~BST();
+        ~BST();
         void preOrderWalk();
         void postOrderWalk();
         void printInOrderWalk(Node* node);
